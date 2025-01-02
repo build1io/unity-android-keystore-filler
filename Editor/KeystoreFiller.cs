@@ -15,13 +15,13 @@ namespace Build1.UnityAndroidKeystoreFiller.Editor
     {
         static KeystoreFiller()
         {
-            const bool log = false;
+            //const bool log = false;
             
             var keystorePath = GetKeystorePath();
             if (keystorePath == null)
             {
-                if (log)
-                    Debug.LogWarning("Keystore Filler: Keystore file not found");
+                // if (log)
+                    // Debug.LogWarning("Keystore Filler: Keystore file not found");
                 return;    
             }
 
@@ -29,15 +29,15 @@ namespace Build1.UnityAndroidKeystoreFiller.Editor
             {
                 PlayerSettings.Android.keystoreName = keystorePath;
                 
-                if (log)
-                    Debug.Log("Keystore Filler: Keystore set");
+                // if (log)
+                //     Debug.Log("Keystore Filler: Keystore set");
             }
 
             var passwordFilePath = keystorePath + ".txt";
             if (!File.Exists(passwordFilePath))
             {
-                if (log)
-                    Debug.LogWarning("Keystore Filler: Keystore password file not found");
+                // if (log)
+                //     Debug.LogWarning("Keystore Filler: Keystore password file not found");
                 return;
             }
 
@@ -48,8 +48,8 @@ namespace Build1.UnityAndroidKeystoreFiller.Editor
             //PlayerSettings.Android.keyaliasName = password; // ???
             PlayerSettings.Android.keyaliasPass = password;
             
-            if (log)
-                Debug.LogWarning("Keystore Filler: All set");
+            // if (log)
+            //     Debug.LogWarning("Keystore Filler: All set");
         }
 
         private static string GetKeystorePath()
