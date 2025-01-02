@@ -15,7 +15,7 @@ namespace Build1.UnityAndroidKeystoreFiller.Editor
     {
         static KeystoreFiller()
         {
-            const bool log = true;
+            const bool log = false;
             
             var keystorePath = GetKeystorePath();
             if (keystorePath == null)
